@@ -14,8 +14,8 @@ class AdminController {
   static async findOne(req, res, next) {
     try {
       const id = req.params.id
-      const movie = await Admin.findOne(id)
-      res.status(200).json(movie)
+      const admin = await Admin.findOne(id)
+      res.status(200).json(admin)
       next()
     } catch (error) {
       next(error)
@@ -25,8 +25,8 @@ class AdminController {
 
   static async create(req, res, next) {
     try {
-      const movie = req.body
-      const admins = await Admin.create(movie)
+      const admin = req.body
+      const admins = await Admin.create(admin)
       res.status(201).json(admins.ops[0])
       next()
     } catch (error) {
